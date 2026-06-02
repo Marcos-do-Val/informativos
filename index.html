@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marcos do Val · Mandato em Números · Espírito Santo</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde: #1a4d2e;
+    --verde-claro: #2d7a47;
+    --amarelo: #f5c518;
+    --cinza-aco: #1c1c1e;
+    --cinza-medio: #3a3a3c;
+    --cinza-claro: #8e8e93;
+    --branco: #f5f5f0;
+    --papel: #faf9f6;
+    --borda: rgba(245,197,24,0.25);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: var(--cinza-aco);
+    color: var(--branco);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(160deg, #0d2e1a 0%, #1a4d2e 50%, #0a1a10 100%);
+    border-bottom: 3px solid var(--amarelo);
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -80px;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,197,24,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: var(--amarelo);
+    color: var(--cinza-aco);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    margin-bottom: 20px;
+  }
+  .hero-nome {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(56px, 8vw, 100px);
+    line-height: 0.9;
+    letter-spacing: 2px;
+    color: #fff;
+  }
+  .hero-nome span { color: var(--amarelo); }
+  .hero-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-top: 10px;
+    margin-bottom: 28px;
+  }
+  .hero-desc {
+    max-width: 680px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.75);
+    border-left: 3px solid var(--amarelo);
+    padding-left: 18px;
+  }
+
+  /* NÚMEROS DESTAQUE */
+  .numeros {
+    background: var(--amarelo);
+    padding: 28px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0;
+  }
+  .num-item {
+    text-align: center;
+    padding: 10px 20px;
+    border-right: 1px solid rgba(0,0,0,0.15);
+  }
+  .num-item:last-child { border-right: none; }
+  .num-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 44px;
+    color: var(--cinza-aco);
+    line-height: 1;
+  }
+  .num-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.55);
+    margin-top: 4px;
+  }
+
+  /* CONTAINER PRINCIPAL */
+  .main { max-width: 1100px; margin: 0 auto; padding: 50px 30px; }
+
+  /* SEÇÃO TÍTULO */
+  .sec-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--amarelo);
+    margin-bottom: 8px;
+  }
+  .sec-h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-bottom: 30px;
+    line-height: 1;
+  }
+
+  /* CARDS DE INFOPRODUTOS */
+  .grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 60px;
+  }
+
+  .card {
+    background: var(--cinza-medio);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-top: 3px solid var(--verde-claro);
+    padding: 28px;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-top-color: var(--amarelo);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+  .card.destaque { border-top-color: var(--amarelo); grid-column: span 2; }
+  @media(max-width:680px){ .card.destaque { grid-column: span 1; } }
+
+  .card-tag {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    margin-bottom: 14px;
+    background: rgba(245,197,24,0.15);
+    color: var(--amarelo);
+    border: 1px solid rgba(245,197,24,0.3);
+  }
+  .card-tag.verde { background: rgba(45,122,71,0.2); color: #5dba7e; border-color: rgba(45,122,71,0.4); }
+  .card-tag.cinza { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.15); }
+
+  .card-titulo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .card-desc {
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 20px;
+  }
+  .card-btn {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 9px 20px;
+    background: transparent;
+    border: 1.5px solid rgba(245,197,24,0.5);
+    color: var(--amarelo);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .card-btn:hover { background: var(--amarelo); color: var(--cinza-aco); }
+  .card-btn.verde-btn {
+    border-color: rgba(93,186,126,0.5);
+    color: #5dba7e;
+  }
+  .card-btn.verde-btn:hover { background: #5dba7e; color: #fff; }
+
+  /* MODAL / INFOPRODUTO EXPANDIDO */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.88);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.open { display: flex; }
+
+  .modal-box {
+    background: var(--papel);
+    color: #1a1a1a;
+    max-width: 780px;
+    width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+    position: relative;
+    border-top: 5px solid var(--verde);
+  }
+  .modal-header {
+    background: var(--verde);
+    color: #fff;
+    padding: 28px 36px 22px;
+    position: relative;
+  }
+  .modal-tag-m {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--amarelo);
+    margin-bottom: 8px;
+  }
+  .modal-titulo-m {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    letter-spacing: 1px;
+    line-height: 1;
+    color: #fff;
+  }
+  .modal-close {
+    position: absolute;
+    top: 18px; right: 18px;
+    background: rgba(255,255,255,0.12);
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    width: 36px; height: 36px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Barlow', sans-serif;
+    transition: background 0.15s;
+  }
+  .modal-close:hover { background: rgba(255,255,255,0.25); }
+
+  .modal-body {
+    padding: 36px;
+  }
+  .modal-body h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--verde);
+    margin: 24px 0 10px;
+    border-bottom: 2px solid var(--verde);
+    padding-bottom: 6px;
+  }
+  .modal-body h3:first-child { margin-top: 0; }
+  .modal-body p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #333;
+    margin-bottom: 12px;
+  }
+  .modal-body ul {
+    list-style: none;
+    margin-bottom: 16px;
+  }
+  .modal-body ul li {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #333;
+    padding: 7px 0 7px 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .modal-body ul li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--verde);
+    font-size: 10px;
+    top: 10px;
+  }
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+    margin: 16px 0 24px;
+  }
+  .stat-box {
+    background: var(--verde);
+    color: #fff;
+    text-align: center;
+    padding: 16px 12px;
+  }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--amarelo);
+    line-height: 1;
+  }
+  .stat-lbl {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-top: 4px;
+  }
+  .destaque-frase {
+    background: #f0f7f3;
+    border-left: 4px solid var(--verde);
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--verde);
+    line-height: 1.4;
+  }
+  .modal-footer {
+    background: var(--cinza-aco);
+    padding: 20px 36px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn-copiar, .btn-compartilhar {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 10px 22px;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.15s;
+  }
+  .btn-copiar { background: var(--amarelo); color: var(--cinza-aco); }
+  .btn-compartilhar { background: var(--verde); color: #fff; }
+  .btn-copiar:hover, .btn-compartilhar:hover { opacity: 0.85; }
+  .copiado-msg {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #5dba7e;
+    letter-spacing: 1px;
+    display: none;
+  }
+  .copiado-msg.show { display: inline-block; }
+
+  /* TABELA DE EMENDAS */
+  .tabela-emendas {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin: 14px 0 20px;
+  }
+  .tabela-emendas th {
+    background: var(--verde);
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 11px;
+    padding: 10px 14px;
+    text-align: left;
+  }
+  .tabela-emendas td {
+    padding: 9px 14px;
+    color: #2a2a2a;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+  }
+  .tabela-emendas tr:nth-child(even) td { background: rgba(26,77,46,0.04); }
+  .tabela-emendas td.valor {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--verde);
+    white-space: nowrap;
+  }
+  .status-ok {
+    display: inline-block;
+    background: #e8f5ec;
+    color: #1a7035;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+  }
+
+  /* SEPARADOR */
+  .sep {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(245,197,24,0.3), transparent);
+    margin: 50px 0;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: #111;
+    border-top: 2px solid var(--verde);
+    padding: 30px 40px;
+    text-align: center;
+  }
+  .footer-slogan {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 3px;
+    color: var(--amarelo);
+    margin-bottom: 8px;
+  }
+  .footer-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* RESPONSIVE */
+  @media(max-width:600px){
+    .hero { padding: 40px 20px 36px; }
+    .numeros { padding: 20px; grid-template-columns: repeat(2, 1fr); }
+    .num-item { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.1); }
+    .main { padding: 36px 16px; }
+    .modal-body { padding: 24px 20px; }
+    .modal-header { padding: 22px 20px 18px; }
+    .modal-footer { padding: 16px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Central de Informação · Mandato 2019–2026</div>
+  <div class="hero-nome">MARCOS<br><span>DO VAL</span></div>
+  <div class="hero-sub">Senador · Avante · Espírito Santo</div>
+  <div class="hero-desc">
+    Informativos prontos para grupos de WhatsApp, Telegram e redes sociais. Dados verificados do mandato. Compartilhe com sua rede.
+  </div>
+</div>
+
+<!-- NÚMEROS DESTAQUE -->
+<div class="numeros">
+  <div class="num-item">
+    <div class="num-val">R$512M</div>
+    <div class="num-label">Em emendas ao ES</div>
+  </div>
+  <div class="num-item">
+    <div class="num-val">78</div>
+    <div class="num-label">Municípios atendidos</div>
+  </div>
+  <div class="num-item">
+    <div class="num-val">796</div>
+    <div class="num-label">Homicídios em 2025 (recorde)</div>
+  </div>
+  <div class="num-item">
+    <div class="num-val">30</div>
+    <div class="num-label">Anos — menor índice</div>
+  </div>
+  <div class="num-item">
+    <div class="num-val">1.600</div>
+    <div class="num-label">Câmeras PRO-SEG</div>
+  </div>
+  <div class="num-item">
+    <div class="num-val">8</div>
+    <div class="num-label">Leis aprovadas</div>
+  </div>
+</div>
+
+<!-- CARDS PRINCIPAIS -->
+<div class="main">
+
+  <div class="sec-titulo">Informativos do Mandato</div>
+  <div class="sec-h2">ESCOLHA O TEMA E COMPARTILHE</div>
+
+  <div class="grid-cards">
+
+    <!-- CARD 1: PRO-SEG -->
+    <div class="card destaque" onclick="abrirModal('proseg')">
+      <div class="card-tag">🔒 Segurança Pública</div>
+      <div class="card-titulo">PRO-SEG: A maior estrutura de segurança integrada da história do ES</div>
+      <div class="card-desc">1.600 câmeras inteligentes, drones táticos, app ELA PROTEGE e 6 Consórcios Intermunicipais cobrindo os 78 municípios capixabas. Inaugurado em março de 2026.</div>
+      <button class="card-btn">Ver informativo completo →</button>
+    </div>
+
+    <!-- CARD 2: EMENDAS -->
+    <div class="card" onclick="abrirModal('emendas')">
+      <div class="card-tag verde">💰 Emendas Parlamentares</div>
+      <div class="card-titulo">R$ 512 milhões para o Espírito Santo</div>
+      <div class="card-desc">Distribuídos em 100% dos 78 municípios. Saúde, segurança, educação, agricultura e assistência social.</div>
+      <button class="card-btn verde-btn">Ver tabela de emendas →</button>
+    </div>
+
+    <!-- CARD 3: HOMICÍDIOS -->
+    <div class="card" onclick="abrirModal('homicidios')">
+      <div class="card-tag">📉 Dados Históricos</div>
+      <div class="card-titulo">796 homicídios em 2025: menor patamar em 30 anos</div>
+      <div class="card-desc">Primeira vez desde 1996 que o ES termina o ano com menos de 800 assassinatos. Queda de 6,8% sobre 2024.</div>
+      <button class="card-btn">Ver dados completos →</button>
+    </div>
+
+    <!-- CARD 4: PACOTE ANTICRIME -->
+    <div class="card" onclick="abrirModal('anticrime')">
+      <div class="card-tag cinza">⚖️ Legislação Federal</div>
+      <div class="card-titulo">Relator do Pacote Anticrime — Lei 13.964/2019</div>
+      <div class="card-desc">A maior peça de legislação penal aprovada no país desde a Constituição. Relatoria nacional com impacto direto na segurança pública do ES.</div>
+      <button class="card-btn">Ver informativo →</button>
+    </div>
+
+    <!-- CARD 5: MULHER -->
+    <div class="card" onclick="abrirModal('mulher')">
+      <div class="card-tag verde">👩 Proteção à Mulher</div>
+      <div class="card-titulo">ELA PROTEGE + PEC 41: segurança para a mulher capixaba</div>
+      <div class="card-desc">App de proteção integrado ao PRO-SEG, PEC 41 apresentada no Senado e redução de 15,4% nos feminicídios no ES em 2025.</div>
+      <button class="card-btn verde-btn">Ver informativo →</button>
+    </div>
+
+    <!-- CARD 6: MUNICIPIOS -->
+    <div class="card" onclick="abrirModal('municipios')">
+      <div class="card-tag cinza">🗺️ Presença no Território</div>
+      <div class="card-titulo">78 cidades. Nenhuma esquecida.</div>
+      <div class="card-desc">Todos os municípios capixabas receberam emendas parlamentares. Viaturas, saúde, educação e segurança chegaram a cada canto do estado.</div>
+      <button class="card-btn">Ver cobertura →</button>
+    </div>
+
+    <!-- CARD 7: MENSAGEM PRONTA WHATSAPP -->
+    <div class="card" onclick="abrirModal('whatsapp')">
+      <div class="card-tag">📱 Mensagens Prontas</div>
+      <div class="card-titulo">Textos prontos para WhatsApp e Telegram</div>
+      <div class="card-desc">10 mensagens modulares calibradas por perfil de eleitor. Copie, cole e compartilhe com sua rede agora mesmo.</div>
+      <button class="card-btn">Ver mensagens →</button>
+    </div>
+
+    <!-- CARD 8: BIOGRAFIA -->
+    <div class="card" onclick="abrirModal('bio')">
+      <div class="card-tag cinza">🎖️ Quem é Marcos do Val</div>
+      <div class="card-titulo">Especialista SWAT. Senador. Capixaba que entrega.</div>
+      <div class="card-desc">Trajetória na segurança pública nacional e internacional, mandato de 8 anos e entrega concreta nos 78 municípios.</div>
+      <button class="card-btn">Ver biografia →</button>
+    </div>
+
+  </div>
+
+  <div class="sep"></div>
+
+  <div class="sec-titulo">Como usar estes informativos</div>
+  <div class="sec-h2">GUIA RÁPIDO DE COMPARTILHAMENTO</div>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:16px; margin-bottom:50px;">
+    <div style="background:var(--cinza-medio); padding:22px; border-left:3px solid var(--amarelo);">
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:32px; color:var(--amarelo); margin-bottom:6px;">01</div>
+      <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:16px; margin-bottom:8px;">Clique no card do tema</div>
+      <div style="font-size:13.5px; color:rgba(255,255,255,0.6); line-height:1.6;">Escolha o informativo mais adequado para a conversa ou grupo onde vai compartilhar.</div>
+    </div>
+    <div style="background:var(--cinza-medio); padding:22px; border-left:3px solid var(--amarelo);">
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:32px; color:var(--amarelo); margin-bottom:6px;">02</div>
+      <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:16px; margin-bottom:8px;">Leia o informativo</div>
+      <div style="font-size:13.5px; color:rgba(255,255,255,0.6); line-height:1.6;">Cada card abre o conteúdo completo com dados verificados, fatos e frases prontas.</div>
+    </div>
+    <div style="background:var(--cinza-medio); padding:22px; border-left:3px solid var(--amarelo);">
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:32px; color:var(--amarelo); margin-bottom:6px;">03</div>
+      <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:16px; margin-bottom:8px;">Copie o texto</div>
+      <div style="font-size:13.5px; color:rgba(255,255,255,0.6); line-height:1.6;">Use o botão "Copiar texto" para pegar a mensagem formatada pronta para colar.</div>
+    </div>
+    <div style="background:var(--cinza-medio); padding:22px; border-left:3px solid var(--amarelo);">
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:32px; color:var(--amarelo); margin-bottom:6px;">04</div>
+      <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:16px; margin-bottom:8px;">Compartilhe</div>
+      <div style="font-size:13.5px; color:rgba(255,255,255,0.6); line-height:1.6;">Cole no WhatsApp, Telegram, ou use como resposta em debates online. Dados reais, impacto real.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-slogan">CAPIXABA QUE ENTREGA · CAPIXABA DO VAL</div>
+  <div class="footer-sub">Senador Marcos do Val · Avante · Espírito Santo · mandato 2019–2027</div>
+</div>
+
+
+<!-- ===== MODAIS ===== -->
+
+<!-- MODAL: PRO-SEG -->
+<div class="modal-overlay" id="modal-proseg">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-tag-m">🔒 Informativo · Segurança Pública</div>
+      <div class="modal-titulo-m">PRO-SEG: Segurança Integrada<br>em 78 Municípios</div>
+      <button class="modal-close" onclick="fecharModal('proseg')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="stat-row">
+        <div class="stat-box"><div class="stat-num">1.600</div><div class="stat-lbl">Câmeras inteligentes</div></div>
+        <div class="stat-box"><div class="stat-num">6</div><div class="stat-lbl">Consórcios intermunicipais</div></div>
+        <div class="stat-box"><div class="stat-num">78</div><div class="stat-lbl">Municípios integrados</div></div>
+        <div class="stat-box"><div class="stat-num">R$15M</div><div class="stat-lbl">Em emendas do senador</div></div>
+      </div>
+      <h3>O que é o PRO-SEG</h3>
+      <p>O Programa de Segurança Integrada (PRO-SEG) é o maior programa de segurança pública integrada da história do Espírito Santo. Inaugurado em 27 de março de 2026, em Vitória, em parceria com o prefeito Lorenzo Pazolini, o PRO-SEG conecta todos os 78 municípios capixabas em uma estrutura de inteligência e monitoramento única no Brasil.</p>
+      <div class="destaque-frase">"Câmera funcionando, polícia equipada, capixaba seguro."</div>
+      <h3>Componentes do Programa</h3>
+      <ul>
+        <li>1.600 câmeras inteligentes com reconhecimento facial e OCR (leitura de placas)</li>
+        <li>Drones táticos XMobots para monitoramento aéreo</li>
+        <li>Central de Monitoramento com Inteligência Artificial integrada</li>
+        <li>Aplicativo ELA PROTEGE — proteção específica para mulheres</li>
+        <li>Base K70S de operações táticas</li>
+        <li>6 Consórcios Intermunicipais: Polo Sul, Sul Expandida, Norte, Noroeste, Litoral Norte e Caparaó</li>
+      </ul>
+      <h3>A contribuição do Senador Marcos do Val</h3>
+      <p>O Senador Marcos do Val destinou R$ 15 milhões em emendas parlamentares diretamente para o PRO-SEG — equipamentos, viaturas e estrutura tecnológica. Esta é a mais expressiva contribuição federal individual para a segurança pública do Espírito Santo em uma geração.</p>
+      <div class="destaque-frase">O Senador Marcos do Val foi o parlamentar que mais investiu em segurança pública no ES no período em que o crime mais caiu na história do estado.</div>
+      <h3>Resultado em 2025</h3>
+      <p>Com o PRO-SEG em implantação e os investimentos parlamentares acumulados, o Espírito Santo registrou 796 homicídios em 2025 — o menor número desde 1996. Uma queda de 6,8% sobre 2024.</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-copiar" onclick="copiarTexto('proseg')">📋 Copiar texto para WhatsApp</button>
+      <span class="copiado-msg" id="msg-proseg">✓ Copiado!</span>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: EMENDAS -->
+<div class="modal-overlay" id="modal-emendas">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-tag-m">💰 Informativo · Emendas Parlamentares</div>
+      <div class="modal-titulo-m">R$ 512 Milhões<br>Para o Espírito Santo</div>
+      <button class="modal-close" onclick="fecharModal('emendas')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="stat-row">
+        <div class="stat-box"><div class="stat-num">R$512M</div><div class="stat-lbl">Total no mandato</div></div>
+        <div class="stat-box"><div class="stat-num">R$132M</div><div class="stat-lbl">Só em segurança</div></div>
+        <div class="stat-box"><div class="stat-num">R$282M</div><div class="stat-lbl">Em saúde</div></div>
+        <div class="stat-box"><div class="stat-num">R$71M</div><div class="stat-lbl">Em educação</div></div>
+      </div>
+      <h3>Tabela de Emendas por Destino</h3>
+      <table class="tabela-emendas">
+        <thead>
+          <tr><th>Destino</th><th>Área</th><th>Valor</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>PRO-SEG (equipamentos e viaturas)</td><td>Segurança</td><td class="valor">R$ 15M</td><td><span class="status-ok">Entregue</span></td></tr>
+          <tr><td>Guarda Municipal de Vitória</td><td>Segurança</td><td class="valor">R$ 7,2M</td><td><span class="status-ok">Entregue</span></td></tr>
+          <tr><td>Viaturas para a PM do ES</td><td>Segurança</td><td class="valor">R$ 3,1M</td><td><span class="status-ok">Entregue</span></td></tr>
+          <tr><td>IFES — Instituto Federal do ES</td><td>Educação</td><td class="valor">R$ 10M</td><td><span class="status-ok">Entregue</span></td></tr>
+          <tr><td>78 municípios (saúde, social, agro)</td><td>Múltipla</td><td class="valor">R$ 49,1M</td><td><span class="status-ok">Distribuído</span></td></tr>
+          <tr><td>Segurança pública — total no mandato</td><td>Segurança</td><td class="valor">R$ 132M</td><td><span class="status-ok">Auditável</span></td></tr>
+          <tr><td>Saúde — total no mandato</td><td>Saúde</td><td class="valor">R$ 282M</td><td><span class="status-ok">Distribuído</span></td></tr>
+          <tr><td>Educação — total no mandato</td><td>Educação</td><td class="valor">R$ 71M</td><td><span class="status-ok">Distribuído</span></td></tr>
+          <tr><td>Maquinário agrícola</td><td>Agricultura</td><td class="valor">R$ 16M</td><td><span class="status-ok">Entregue</span></td></tr>
+          <tr><td>Assistência social (CRAS)</td><td>Social</td><td class="valor">R$ 11M</td><td><span class="status-ok">Entregue</span></td></tr>
+        </tbody>
+      </table>
+      <div class="destaque-frase">"78 cidades. Nenhuma esquecida." — R$ 512 milhões em emendas geolocalizadas, todos os valores auditáveis no Portal da Transparência.</div>
+      <h3>Como verificar</h3>
+      <p>Todos os dados de emendas parlamentares são auditáveis pelo Portal da Transparência do Governo Federal (transparencia.gov.br). Pesquise pelo nome do parlamentar ou pelo CNPJ do município beneficiado.</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-copiar" onclick="copiarTexto('emendas')">📋 Copiar texto para WhatsApp</button>
+      <span class="copiado-msg" id="msg-emendas">✓ Copiado!</span>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: HOMICÍDIOS -->
+<div class="modal-overlay" id="modal-homicidios">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-tag-m">📉 Informativo · Dados Históricos</div>
+      <div class="modal-titulo-m">796 Homicídios em 2025<br>Menor Patamar em 30 Anos</div>
+      <button class="modal-close" onclick="fecharModal('homicidios')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="stat-row">
+        <div class="stat-box"><div class="stat-num">796</div><div class="stat-lbl">Homicídios em 2025</div></div>
+        <div class="stat-box"><div class="stat-num">-6,8%</div><div class="stat-lbl">Vs. 2024</div></div>
+        <div class="stat-box"><div class="stat-num">30</div><div class="stat-lbl">Anos de recorde</div></div>
+        <div class="stat-box"><div class="stat-num">10</div><div class="stat-lbl">Cidades sem nenhum caso</div></div>
+      </div>
+      <h3>O que os dados mostram</h3>
+      <p>Em 2025, o Espírito Santo registrou 796 homicídios dolosos — o menor patamar desde 1996, quando a série histórica começou a ser contabilizada. É a primeira vez em 29 anos que o estado termina o ano com menos de 800 assassinatos.</p>
+      <div class="destaque-frase">58 vidas poupadas em relação a 2024. Isso é resultado. Isso é entrega.</div>
+      <h3>Destaques regionais</h3>
+      <ul>
+        <li>Região Sul: queda de 33,3% — melhor resultado da história</li>
+        <li>Região Serrana: queda de 25,4%</li>
+        <li>Região Noroeste: queda de 12,6%</li>
+        <li>Região Metropolitana: melhor resultado da série histórica com 395 casos</li>
+        <li>Letalidade feminina: 75 casos, o menor número desde 1996</li>
+        <li>Feminicídios: queda de 15,4% (de 39 para 34 casos)</li>
+      </ul>
+      <h3>Municípios sem nenhum homicídio em 2025</h3>
+      <ul>
+        <li>Dores do Rio Preto — 1.324 dias sem homicídio</li>
+        <li>Iconha — 1.109 dias sem homicídio</li>
+        <li>Vila Pavão, Alfredo Chaves, Laranja da Terra, Rio Novo do Sul, Jerônimo Monteiro, Castelo, Bom Jesus do Norte, Apiacá e Muniz Freire</li>
+      </ul>
+      <h3>A contribuição federal</h3>
+      <p>Enquanto o estado implementava o Programa Estado Presente, o Senador Marcos do Val destinava R$ 132 milhões em emendas exclusivamente para segurança pública — Polícia Militar, Polícia Civil, Polícia Penal, Bombeiros e Guardas Municipais. A queda do crime é resultado dessa combinação: gestão estadual + investimento federal concentrado.</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-copiar" onclick="copiarTexto('homicidios')">📋 Copiar texto para WhatsApp</button>
+      <span class="copiado-msg" id="msg-homicidios">✓ Copiado!</span>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: PACOTE ANTICRIME -->
+<div class="modal-overlay" id="modal-anticrime">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-tag-m">⚖️ Informativo · Legislação Federal</div>
+      <div class="modal-titulo-m">Relator do Pacote Anticrime<br>Lei 13.964/2019</div>
+      <button class="modal-close" onclick="fecharModal('anticrime')">✕</button>
+    </div>
+    <div class="modal-body">
+      <h3>O que é o Pacote Anticrime</h3>
+      <p>A Lei 13.964/2019, conhecida como Pacote Anticrime, é a maior peça de legislação penal e processual penal aprovada no Brasil desde a Constituição de 1988. O Senador Marcos do Val foi o relator no Senado Federal — posição que define o texto final da lei.</p>
+      <div class="destaque-frase">Relator do Pacote Anticrime. Não foi promessa. Foi lei aprovada.</div>
+      <h3>O que a lei mudou</h3>
+      <ul>
+        <li>Endurecimento das penas para crimes hediondos e organizações criminosas</li>
+        <li>Criação do juiz das garantias com separação de funções</li>
+        <li>Prisão após condenação em 2ª instância (disposições aplicáveis)</li>
+        <li>Regras mais rígidas para progressão de regime em crimes violentos</li>
+        <li>Aprimoramento do combate ao crime organizado e lavagem de dinheiro</li>
+        <li>Fortalecimento da investigação policial e do Ministério Público</li>
+      </ul>
+      <h3>Outras leis aprovadas no mandato</h3>
+      <ul>
+        <li>PL 3480/2024 — Aprimoramento dos Conselhos de Segurança Pública (aprovado no Senado)</li>
+        <li>PL 1898/2019 — Perda do porte de arma em caso de ingestão de álcool (aprovado)</li>
+        <li>PL 710/2024 — Sistema Nacional de Viação / segurança rodoviária (aprovado)</li>
+        <li>PL 871/2019 — Combate à evasão escolar (aprovado)</li>
+        <li>PEC 41/2025 — Vida livre de violência para a mulher (apresentada)</li>
+      </ul>
+      <h3>Trajetória em segurança pública</h3>
+      <p>Antes do Senado, Marcos do Val foi instrutor de técnicas de segurança com formação e atuação nos Estados Unidos. Membro Honorário da SWAT de Beaumont (Texas) desde 2003. Possui Visto O-1 de Capacidade Extraordinária dos Estados Unidos e a Ordem do Pacificador.</p>
+      <div class="destaque-frase">"Quando a gente confronta o sistema, a pressão é grande." — Marcos do Val, 2019, ao assumir a relatoria do Pacote Anticrime.</div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-copiar" onclick="copiarTexto('anticrime')">📋 Copiar texto para WhatsApp</button>
+      <span class="copiado-msg" id="msg-anticrime">✓ Copiado!</span>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: MULHER -->
+<div class="modal-overlay" id="modal-mulher">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-tag-m">👩 Informativo · Proteção à Mulher</div>
+      <div class="modal-titulo-m">ELA PROTEGE + PEC 41<br>Mulher Capixaba Mais Segura</div>
+      <button class="modal-close" onclick="fecharModal('mulher')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="stat-row">
+        <div class="stat-box"><div class="stat-num">-15,4%</div><div class="stat-lbl">Feminicídios em 2025</div></div>
+        <div class="stat-box"><div class="stat-num">75</div><div class="stat-lbl">Homicídios femininos (recorde)</div></div>
+        <div class="stat-box"><div class="stat-num">34</div><div class="stat-lbl">Feminicídios em 2025</div></div>
+      </div>
+      <div class="destaque-frase">"Que ela ande à noite na rua sem medo." — Slogan do PRO-SEG para proteção da mulher.</div>
+      <h3>App ELA PROTEGE</h3>
+      <p>O aplicativo ELA PROTEGE faz parte do PRO-SEG e foi desenvolvido especificamente para a proteção de mulheres em situação de risco. Integrado à Central de Monitoramento com Inteligência Artificial, o app permite acionamento rápido de socorro e geolocalização em tempo real.</p>
+      <h3>PEC 41/2025 — Vida Livre de Violência</h3>
+      <p>O Senador Marcos do Val apresentou a PEC 41/2025, que eleva à condição constitucional o direito da mulher à vida livre de violência. A proposta fortalece o arcabouço legal de proteção e responsabiliza o Estado pela segurança da mulher em todos os seus aspectos.</p>
+      <h3>Resultado em 2025 no Espírito Santo</h3>
+      <ul>
+        <li>75 homicídios de mulheres — menor número desde o início da série histórica em 1996</li>
+        <li>34 feminicídios — queda de 15,4% sobre 2024</li>
+        <li>318 vítimas de feminicídio entre 2017 e 2025 (acumulado histórico em queda)</li>
+        <li>10 municípios sem nenhum homicídio em 2025, incluindo cidades com maioria de população feminina em zonas vulneráveis</li>
+      </ul>
+      <h3>Por que isso importa</h3>
+      <p>A combinação do app ELA PROTEGE, das câmeras inteligentes do PRO-SEG e da PEC 41 cria um sistema integrado de proteção. O investimento do Senador em segurança pública tem impacto direto e mensurável na vida das mulheres capixabas.</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-copiar" onclick="copiarTexto('mulher')">📋 Copiar texto para WhatsApp</button>
+      <span class="copiado-msg" id="msg-mulher">✓ Copiado!</span>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: MUNICÍPIOS -->
+<div class="modal-overlay" id="modal-municipios">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-tag-m">🗺️ Informativo · Presença no Território</div>
+      <div class="modal-titulo-m">78 Cidades.<br>Nenhuma Esquecida.</div>
+      <button class="modal-close" onclick="fecharModal('municipios')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="stat-row">
+        <div class="stat-box"><div class="stat-num">78</div><div class="stat-lbl">Municípios atendidos</div></div>
+        <div class="stat-box"><div class="stat-num">100%</div><div class="stat-lbl">Cobertura do estado</div></div>
+        <div class="stat-box"><div class="stat-num">R$512M</div><div class="stat-lbl">Total distribuído</div></div>
+      </div>
+      <div class="destaque-frase">"Não tem prefeito de cidade nenhuma deste estado que possa dizer que eu não estive presente."</div>
+      <h3>Como os recursos chegam aos municípios</h3>
+      <p>Pelo sistema de emendas parlamentares impositivas, o Senador Marcos do Val destinou recursos diretamente para todos os 78 municípios capixabas ao longo dos 8 anos de mandato. A cobertura é documentada e auditável.</p>
+      <h3>Áreas atendidas em cada região</h3>
+      <ul>
+        <li><strong>Grande Vitória:</strong> PRO-SEG, Guarda Municipal, viaturas PM, reforma do Hospital da PM</li>
+        <li><strong>Norte do ES:</strong> emendas via CIM Norte, saúde e equipamentos de segurança</li>
+        <li><strong>Sul do ES:</strong> emendas via CIM Polo Sul e CIM Expandida Sul — região com maior queda de homicídios em 2025 (-33,3%)</li>
+        <li><strong>Interior/Serrana:</strong> maquinário agrícola, CRAS, saúde básica e segurança</li>
+        <li><strong>Litoral:</strong> emendas para saúde, turismo e segurança via CIM Litoral Norte</li>
+      </ul>
+      <h3>Os 6 Consórcios Intermunicipais de Segurança</h3>
+      <ul>
+        <li>CIM Polo Sul</li>
+        <li>CIM Sul Expandida</li>
+        <li>CIM Norte</li>
+        <li>CIM Noroeste</li>
+        <li>CIM Litoral Norte</li>
+        <li>CIM Caparaó</li>
+      </ul>
+      <p>Cada consórcio agrupa municípios por proximidade geográfica e integra os sistemas de monitoramento do PRO-SEG. Um modelo único no Brasil.</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-copiar" onclick="copiarTexto('municipios')">📋 Copiar texto para WhatsApp</button>
+      <span class="copiado-msg" id="msg-municipios">✓ Copiado!</span>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: WHATSAPP -->
+<div class="modal-overlay" id="modal-whatsapp">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-tag-m">📱 Mensagens Prontas</div>
+      <div class="modal-titulo-m">Textos para WhatsApp<br>e Telegram</div>
+      <button class="modal-close" onclick="fecharModal('whatsapp')">✕</button>
+    </div>
+    <div class="modal-body">
+      <h3>Para quem não conhece o Senador</h3>
+      <div style="background:#f0f7f3; border:1px solid #b8dfc6; padding:16px; margin-bottom:16px; font-size:14px; line-height:1.7; color:#1a3a26; font-family:'Barlow',sans-serif; white-space:pre-line;">🔒 *MARCOS DO VAL — QUEM É?*
+
+Especialista em segurança pública, com formação nos EUA (SWAT/Texas), instrutor de forças policiais e Membro Honorário da SWAT de Beaumont.
+
+No Senado, foi relator do *Pacote Anticrime* (Lei 13.964/2019) — a maior lei penal aprovada no Brasil desde a Constituição.
+
+Destinou *R$ 512 milhões em emendas* para todos os 78 municípios do Espírito Santo.
+
+Em 2025, o ES registrou *796 homicídios — o menor número em 30 anos.*
+
+Senador Marcos do Val. Avante/ES. *Capixaba que entrega.*</div>
+      <button class="btn-copiar" style="margin-bottom:24px;" onclick="copiarMsg(0)">📋 Copiar esta mensagem</button>
+      <span class="copiado-msg" id="msg-wa-0">✓ Copiado!</span>
+
+      <h3>Para grupos de segurança pública</h3>
+      <div style="background:#f0f7f3; border:1px solid #b8dfc6; padding:16px; margin-bottom:16px; font-size:14px; line-height:1.7; color:#1a3a26; white-space:pre-line;">⚡ *PRO-SEG NO ESPÍRITO SANTO*
+
+O Senador Marcos do Val inaugurou o maior programa de segurança integrada da história do ES:
+
+📷 1.600 câmeras inteligentes (reconhecimento facial + leitura de placas)
+🚁 Drones táticos XMobots
+🖥️ Central de Monitoramento com IA
+📱 App *ELA PROTEGE* para mulheres
+🏢 6 Consórcios Intermunicipais cobrindo os 78 municípios
+
+Investimento: *R$ 15 milhões em emendas do Senador* + parceria com a Prefeitura de Vitória.
+
+*Segurança não é promessa. É entrega.*</div>
+      <button class="btn-copiar" style="margin-bottom:24px;" onclick="copiarMsg(1)">📋 Copiar esta mensagem</button>
+      <span class="copiado-msg" id="msg-wa-1">✓ Copiado!</span>
+
+      <h3>Para rebater "vive em Brasília"</h3>
+      <div style="background:#f0f7f3; border:1px solid #b8dfc6; padding:16px; margin-bottom:16px; font-size:14px; line-height:1.7; color:#1a3a26; white-space:pre-line;">🎯 Brasília é onde se aprova verba para o ES.
+
+Em 8 anos de mandato, o Senador Marcos do Val destinou *R$ 512 milhões* em emendas para os 78 municípios capixabas.
+
+✅ R$ 132M em segurança pública
+✅ R$ 282M em saúde
+✅ R$ 71M em educação (IFES, UFES)
+✅ R$ 16M em maquinário agrícola
+✅ Viaturas para PM, PC, Bombeiros e Guardas Municipais
+
+Não tem prefeito de cidade nenhuma do ES que possa dizer que o Senador não esteve presente.
+
+*Emendas são auditáveis em transparencia.gov.br*</div>
+      <button class="btn-copiar" style="margin-bottom:24px;" onclick="copiarMsg(2)">📋 Copiar esta mensagem</button>
+      <span class="copiado-msg" id="msg-wa-2">✓ Copiado!</span>
+
+      <h3>Para grupos de mulheres</h3>
+      <div style="background:#f0f7f3; border:1px solid #b8dfc6; padding:16px; margin-bottom:16px; font-size:14px; line-height:1.7; color:#1a3a26; white-space:pre-line;">👩‍❤️‍👩 *PARA A MULHER CAPIXABA*
+
+O Senador Marcos do Val criou o app *ELA PROTEGE* — integrado ao sistema de câmeras e drones do PRO-SEG — especificamente para proteger mulheres em situação de risco.
+
+Resultado em 2025 no ES:
+📉 Feminicídios caíram *15,4%*
+📉 Homicídios femininos: 75 casos — *menor número da história*
+
+O Senador também apresentou a *PEC 41/2025* — que eleva à Constituição o direito da mulher à vida livre de violência.
+
+"Que ela ande à noite na rua sem medo."</div>
+      <button class="btn-copiar" style="margin-bottom:24px;" onclick="copiarMsg(3)">📋 Copiar esta mensagem</button>
+      <span class="copiado-msg" id="msg-wa-3">✓ Copiado!</span>
+
+      <h3>Para responder sobre o Pacote Anticrime</h3>
+      <div style="background:#f0f7f3; border:1px solid #b8dfc6; padding:16px; margin-bottom:16px; font-size:14px; line-height:1.7; color:#1a3a26; white-space:pre-line;">⚖️ *MARCOS DO VAL E O PACOTE ANTICRIME*
+
+O Senador Marcos do Val foi o *relator* da Lei 13.964/2019 — o Pacote Anticrime.
+
+Essa é a maior reforma penal aprovada no Brasil desde a Constituição de 1988. Endureceu penas, combateu o crime organizado e modernizou o processo penal.
+
+Ele não assinou por convicção. Ele fez o trabalho.
+
+Somado ao PRO-SEG e aos R$ 132 milhões em emendas para segurança pública no ES, o resultado é claro:
+
+*796 homicídios em 2025 — menor número em 30 anos.*
+
+Isso é posição firme que vira resultado.</div>
+      <button class="btn-copiar" style="margin-bottom:24px;" onclick="copiarMsg(4)">📋 Copiar esta mensagem</button>
+      <span class="copiado-msg" id="msg-wa-4">✓ Copiado!</span>
+
+    </div>
+    <div class="modal-footer">
+      <span style="font-family:'Barlow Condensed',sans-serif; font-size:13px; color:rgba(255,255,255,0.5); letter-spacing:1px;">USE OS BOTÕES ACIMA PARA COPIAR CADA MENSAGEM INDIVIDUALMENTE</span>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: BIOGRAFIA -->
+<div class="modal-overlay" id="modal-bio">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-tag-m">🎖️ Informativo · Quem é Marcos do Val</div>
+      <div class="modal-titulo-m">Especialista SWAT.<br>Senador. Capixaba.</div>
+      <button class="modal-close" onclick="fecharModal('bio')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="destaque-frase">"Marcos do Val: o senador capixaba que entrega, e não recua quando precisa defender o Espírito Santo."</div>
+      <h3>Trajetória em Segurança Pública</h3>
+      <ul>
+        <li>Membro Honorário da SWAT de Beaumont, Texas (EUA), desde 2003</li>
+        <li>Instrutor de técnicas de tiro e segurança para forças policiais nacionais e internacionais</li>
+        <li>Visto O-1 de Capacidade Extraordinária dos Estados Unidos</li>
+        <li>Detentor da Ordem do Pacificador</li>
+        <li>30 anos de atuação em segurança pública antes do mandato</li>
+      </ul>
+      <h3>Mandato no Senado (2019–2027)</h3>
+      <ul>
+        <li>Relator do Pacote Anticrime — Lei 13.964/2019</li>
+        <li>8 proposições aprovadas no Senado</li>
+        <li>R$ 512 milhões em emendas para os 78 municípios do ES</li>
+        <li>Criação e inauguração do PRO-SEG</li>
+        <li>Membro e presidente estadual do Avante (ES)</li>
+        <li>Parceria com todos os prefeitos dos 78 municípios via PRO-SEG</li>
+      </ul>
+      <h3>Slogan da campanha 2026</h3>
+      <div class="destaque-frase" style="font-size:22px;">Capixaba que entrega. Capixaba do Val.</div>
+      <h3>Os 5 slogans temáticos</h3>
+      <ul>
+        <li>Segurança Pública: "Câmera funcionando, polícia equipada, capixaba seguro."</li>
+        <li>Proteção à mulher: "Que ela ande à noite na rua sem medo."</li>
+        <li>Território: "78 cidades. Nenhuma esquecida."</li>
+        <li>Combate à corrupção: "Quem enfrenta o sistema, defende o povo."</li>
+        <li>Voz capixaba: "O ES tem dois senadores. Um deles entrega."</li>
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-copiar" onclick="copiarTexto('bio')">📋 Copiar texto para WhatsApp</button>
+      <span class="copiado-msg" id="msg-bio">✓ Copiado!</span>
+    </div>
+  </div>
+</div>
+
+
+<script>
+// Textos para copiar por modal
+const textos = {
+  proseg: `🔒 PRO-SEG — SEGURANÇA INTEGRADA EM 78 MUNICÍPIOS\n\nO Senador Marcos do Val inaugurou o PRO-SEG em março de 2026: o maior programa de segurança pública integrada da história do Espírito Santo.\n\n📷 1.600 câmeras inteligentes\n🚁 Drones táticos XMobots\n🖥️ Central de Monitoramento com IA\n📱 App ELA PROTEGE para mulheres\n🏢 6 Consórcios Intermunicipais — 78 municípios integrados\n\nInvestimento: R$ 15 milhões em emendas do Senador.\n\nResultado: 796 homicídios em 2025 — menor número em 30 anos.\n\nSegurança não é promessa. É entrega. 🇧🇷`,
+  emendas: `💰 R$ 512 MILHÕES PARA O ESPÍRITO SANTO\n\nEm 8 anos de mandato, o Senador Marcos do Val destinou R$ 512 milhões em emendas parlamentares para os 78 municípios capixabas. Todos auditáveis no Portal da Transparência.\n\n✅ R$ 132M em segurança pública\n✅ R$ 282M em saúde\n✅ R$ 71M em educação (IFES, UFES)\n✅ R$ 16M em maquinário agrícola\n✅ R$ 11M em assistência social\n\n78 cidades. Nenhuma esquecida.\n\ntransparencia.gov.br — pesquise e confira.`,
+  homicidios: `📉 RECORDE HISTÓRICO DE SEGURANÇA NO ES\n\n2025: 796 homicídios no Espírito Santo.\n\nO menor número desde 1996 — quando a série histórica começou. Queda de 6,8% sobre 2024. São 58 vidas poupadas em um ano.\n\nDestaques:\n• Região Sul: queda de 33,3%\n• Feminicídios: queda de 15,4%\n• 10 cidades sem nenhum homicídio\n• Dores do Rio Preto: 1.324 dias sem caso\n\nO Senador Marcos do Val foi o parlamentar que mais investiu em segurança pública no ES no período em que o crime mais caiu na história do estado.\n\nIsso é resultado. Isso é entrega.`,
+  anticrime: `⚖️ MARCOS DO VAL — RELATOR DO PACOTE ANTICRIME\n\nA Lei 13.964/2019 é a maior reforma penal aprovada no Brasil desde a Constituição de 1988.\n\nO Senador Marcos do Val foi o relator no Senado — posição que define o texto final da lei.\n\nA lei endureceu penas, combateu o crime organizado e modernizou o processo penal brasileiro.\n\nAlém disso, o Senador aprovou mais 7 proposições:\n• PL contra portador de arma sob efeito de álcool\n• PL de segurança rodoviária\n• PL de combate à evasão escolar\n• PEC de proteção à mulher\n• E outros\n\nFirmeza que vira lei. Lei que muda o Brasil.`,
+  mulher: `👩 MULHER CAPIXABA MAIS SEGURA\n\nO Senador Marcos do Val criou o App ELA PROTEGE, integrado ao PRO-SEG, especificamente para proteger mulheres em risco.\n\nResultado em 2025 no ES:\n📉 Feminicídios caíram 15,4%\n📉 75 homicídios femininos — menor número da história\n\nO Senador também apresentou a PEC 41/2025, que eleva à Constituição o direito da mulher à vida livre de violência.\n\n"Que ela ande à noite na rua sem medo."\n\nIsso não é slogan. É compromisso com resultado.`,
+  municipios: `🗺️ 78 CIDADES. NENHUMA ESQUECIDA.\n\nEm 8 anos de mandato, o Senador Marcos do Val destinou emendas para TODOS os 78 municípios capixabas.\n\nNorte, Sul, Serrana, Interior, Litoral — nenhuma cidade ficou fora.\n\nO PRO-SEG cobre os 78 municípios via 6 Consórcios Intermunicipais de Segurança.\n\nR$ 512 milhões em total. Todos os recursos auditáveis.\n\nNão tem prefeito de cidade nenhuma do ES que possa dizer que o Senador não esteve presente.\n\nCapixaba que entrega.`,
+  bio: `🎖️ QUEM É MARCOS DO VAL\n\nSenador do Espírito Santo (Avante). Especialista em segurança pública com 30 anos de trajetória.\n\n• Membro Honorário da SWAT de Beaumont, Texas (desde 2003)\n• Instrutor de forças policiais nacionais e internacionais\n• Visto O-1 dos EUA (Capacidade Extraordinária)\n• Relator do Pacote Anticrime — Lei 13.964/2019\n• R$ 512 milhões em emendas para os 78 municípios do ES\n• Criador do PRO-SEG — maior programa de segurança integrada da história do ES\n\nResultado em 2025: 796 homicídios — menor patamar em 30 anos.\n\nCapixaba que entrega. Capixaba do Val.`
+};
+
+const mensagensWA = [
+  `🔒 *MARCOS DO VAL — QUEM É?*\n\nEspecialista em segurança pública, com formação nos EUA (SWAT/Texas), instrutor de forças policiais e Membro Honorário da SWAT de Beaumont.\n\nNo Senado, foi relator do *Pacote Anticrime* (Lei 13.964/2019) — a maior lei penal aprovada no Brasil desde a Constituição.\n\nDestinou *R$ 512 milhões em emendas* para todos os 78 municípios do Espírito Santo.\n\nEm 2025, o ES registrou *796 homicídios — o menor número em 30 anos.*\n\nSenador Marcos do Val. Avante/ES. *Capixaba que entrega.*`,
+  `⚡ *PRO-SEG NO ESPÍRITO SANTO*\n\nO Senador Marcos do Val inaugurou o maior programa de segurança integrada da história do ES:\n\n📷 1.600 câmeras inteligentes\n🚁 Drones táticos XMobots\n🖥️ Central de Monitoramento com IA\n📱 App *ELA PROTEGE* para mulheres\n🏢 6 Consórcios Intermunicipais cobrindo os 78 municípios\n\nInvestimento: *R$ 15 milhões em emendas do Senador*\n\n*Segurança não é promessa. É entrega.*`,
+  `🎯 Brasília é onde se aprova verba para o ES.\n\nEm 8 anos de mandato, o Senador Marcos do Val destinou *R$ 512 milhões* em emendas para os 78 municípios capixabas.\n\n✅ R$ 132M em segurança pública\n✅ R$ 282M em saúde\n✅ R$ 71M em educação (IFES, UFES)\n✅ R$ 16M em maquinário agrícola\n\nNão tem prefeito de cidade nenhuma do ES que possa dizer que o Senador não esteve presente.\n\n*Emendas auditáveis em transparencia.gov.br*`,
+  `👩‍❤️‍👩 *PARA A MULHER CAPIXABA*\n\nO Senador Marcos do Val criou o app *ELA PROTEGE* — integrado ao PRO-SEG — especificamente para proteger mulheres em risco.\n\nResultado em 2025:\n📉 Feminicídios caíram *15,4%*\n📉 Homicídios femininos: 75 — *menor número da história*\n\nO Senador também apresentou a *PEC 41/2025* — direito constitucional à vida livre de violência.\n\n"Que ela ande à noite na rua sem medo."`,
+  `⚖️ *MARCOS DO VAL E O PACOTE ANTICRIME*\n\nO Senador foi o *relator* da Lei 13.964/2019 — a maior reforma penal desde a Constituição de 1988.\n\nEndureceu penas, combateu o crime organizado, modernizou o processo penal.\n\nSomado ao PRO-SEG e R$ 132M em emendas para segurança no ES:\n\n*796 homicídios em 2025 — menor número em 30 anos.*\n\nPosição firme que vira resultado.`
+];
+
+function abrirModal(id) {
+  document.getElementById('modal-' + id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function fecharModal(id) {
+  document.getElementById('modal-' + id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.modal-overlay').forEach(el => {
+  el.addEventListener('click', function(e) {
+    if (e.target === el) {
+      el.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+});
+
+function copiarTexto(id) {
+  const texto = textos[id];
+  navigator.clipboard.writeText(texto).then(() => {
+    const msg = document.getElementById('msg-' + id);
+    msg.classList.add('show');
+    setTimeout(() => msg.classList.remove('show'), 2500);
+  });
+}
+
+function copiarMsg(idx) {
+  const texto = mensagensWA[idx];
+  navigator.clipboard.writeText(texto).then(() => {
+    const msg = document.getElementById('msg-wa-' + idx);
+    msg.classList.add('show');
+    setTimeout(() => msg.classList.remove('show'), 2500);
+  });
+}
+</script>
+</body>
+</html>
