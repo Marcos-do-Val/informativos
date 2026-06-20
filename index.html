@@ -213,6 +213,68 @@
   }
   .card-btn.verde-btn:hover { background: #5dba7e; color: #fff; }
 
+  /* CTA COMUNIDADE WHATSAPP */
+  .wa-cta {
+    background: linear-gradient(135deg, #1a4d2e 0%, #103420 100%);
+    border: 1px solid rgba(93,186,126,0.35);
+    border-left: 4px solid #5dba7e;
+    padding: 28px 32px;
+    margin: 36px 0 28px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+  }
+  .wa-cta-h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .wa-cta-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    max-width: 480px;
+    line-height: 1.55;
+  }
+  .wa-cta-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 13px 22px;
+    background: #25D366;
+    color: #0a1a10;
+    border: none;
+    white-space: nowrap;
+    transition: background 0.15s, transform 0.15s;
+  }
+  .wa-btn:hover { background: #1fb855; transform: translateY(-1px); }
+  .wa-btn-lideranca {
+    background: transparent;
+    border: 1.5px solid rgba(245,197,24,0.6);
+    color: var(--amarelo);
+  }
+  .wa-btn-lideranca:hover { background: var(--amarelo); color: var(--cinza-aco); }
+  @media(max-width:600px){
+    .wa-cta { padding: 22px 20px; }
+    .wa-cta-botoes { width: 100%; }
+    .wa-btn { flex: 1; justify-content: center; }
+  }
+
   /* MODAL / INFOPRODUTO EXPANDIDO */
   .modal-overlay {
     display: none;
@@ -480,6 +542,21 @@
   </div>
 </div>
 
+<!-- CTA COMUNIDADE WHATSAPP -->
+<div class="main" style="padding-bottom:0;">
+  <div class="wa-cta">
+    <div>
+      <div class="wa-cta-h1">Entre na nossa comunidade de WhatsApp</div>
+      <div class="wa-cta-desc">Receba em primeira mão os informativos oficiais, dados verificados e as entregas do mandato do Senador Marcos do Val no Espírito Santo.</div>
+    </div>
+    <div class="wa-cta-botoes">
+      <a href="https://sndflw.com/i/MBxCd3KfPHyvcGslZxS5" target="_blank" rel="noopener" class="wa-btn">📲 Participar da Comunidade</a>
+      <a href="https://sndflw.com/i/sorOMkKVVuiUNYROJ1BC" target="_blank" rel="noopener" class="wa-btn wa-btn-lideranca">🎖️ Grupo de Lideranças</a>
+    </div>
+  </div>
+  <div class="sec-h2" style="margin-top:8px;">Veja abaixo as principais entregas do senador para o Espírito Santo</div>
+</div>
+
 <!-- NÚMEROS DESTAQUE -->
 <div class="numeros">
   <div class="num-item">
@@ -507,6 +584,7 @@
     <div class="num-label">Leis aprovadas</div>
   </div>
 </div>
+
 
 <!-- CARDS PRINCIPAIS -->
 <div class="main">
@@ -580,6 +658,14 @@
       <button class="card-btn">Ver biografia →</button>
     </div>
 
+    <!-- CARD 9: SENADOR TRANSPARENTE -->
+    <div class="card destaque" onclick="abrirModal('transparente')">
+      <div class="card-tag verde">📲 Ferramenta Cidadã</div>
+      <div class="card-titulo">App Senador Transparente: fiscalize os recursos do seu município</div>
+      <div class="card-desc">Acompanhe em tempo real, direto do celular, todos os recursos destinados pelo Senador aos 78 municípios do ES. Salve na tela inicial e fiscalize.</div>
+      <button class="card-btn verde-btn">Acessar o app →</button>
+    </div>
+
   </div>
 
   <div class="sep"></div>
@@ -613,7 +699,6 @@
 
 <!-- FOOTER -->
 <div class="footer">
-  <div class="footer-slogan">CAPIXABA QUE ENTREGA · CAPIXABA DO VAL</div>
   <div class="footer-sub">Senador Marcos do Val · Avante · Espírito Santo · mandato 2019–2027</div>
 </div>
 
@@ -990,8 +1075,6 @@ Isso é posição firme que vira resultado.</div>
         <li>Membro e presidente estadual do Avante (ES)</li>
         <li>Parceria com todos os prefeitos dos 78 municípios via PRO-SEG</li>
       </ul>
-      <h3>Slogan da campanha 2026</h3>
-      <div class="destaque-frase" style="font-size:22px;">Capixaba que entrega. Capixaba do Val.</div>
       <h3>Os 5 slogans temáticos</h3>
       <ul>
         <li>Segurança Pública: "Câmera funcionando, polícia equipada, capixaba seguro."</li>
@@ -1008,6 +1091,51 @@ Isso é posição firme que vira resultado.</div>
   </div>
 </div>
 
+<!-- MODAL: SENADOR TRANSPARENTE -->
+<div class="modal-overlay" id="modal-transparente">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-tag-m">📲 Ferramenta Cidadã · Inovação</div>
+      <div class="modal-titulo-m">Senador Transparente<br>na palma da mão</div>
+      <button class="modal-close" onclick="fecharModal('transparente')">✕</button>
+    </div>
+    <div class="modal-body">
+      <p>Agora você pode acompanhar diariamente, direto do seu celular, todos os recursos que foram destinados e que ainda estão sendo destinados pelo Senador Marcos do Val aos 78 municípios do Espírito Santo.</p>
+      <p>O aplicativo <strong>Senador Transparente</strong> pode ficar salvo na tela principal do seu celular. Assim, você poderá acessar a qualquer momento, em qualquer lugar, para verificar e fiscalizar os recursos enviados ao seu município.</p>
+      <div class="destaque-frase">Mais uma inovação do Senador capixaba na política brasileira: transparência na palma da mão do cidadão.</div>
+      <p>Uma ferramenta criada pelo próprio Senador Marcos do Val, para que cada capixaba possa acompanhar, fiscalizar e saber exatamente para onde estão indo os recursos públicos destinados por ele.</p>
+
+      <div style="text-align:center; margin: 22px 0;">
+        <a href="https://senadortransparente.com.br" target="_blank" rel="noopener" class="wa-btn" style="text-decoration:none;">🔗 Acessar senadortransparente.com.br</a>
+      </div>
+
+      <h3>Como salvar na tela inicial — Safari (iPhone)</h3>
+      <ul>
+        <li>Abra o link acima no Safari.</li>
+        <li>Toque no botão Compartilhar — o ícone de um quadrado com seta para cima.</li>
+        <li>Role as opções e toque em <strong>Adicionar à Tela de Início</strong>.</li>
+        <li>Confirme em <strong>Adicionar</strong>.</li>
+      </ul>
+
+      <h3>Como salvar na tela inicial — Google Chrome (Android)</h3>
+      <ul>
+        <li>Abra o link acima no Google Chrome.</li>
+        <li>Toque no menu do navegador — geralmente os três pontinhos.</li>
+        <li>Escolha a opção <strong>Adicionar à tela inicial</strong> ou <strong>Instalar aplicativo</strong>, quando aparecer.</li>
+        <li>Confirme para criar o atalho na tela do celular.</li>
+      </ul>
+
+      <p>Pronto. O Senador Transparente ficará salvo na tela inicial do seu aparelho para você acompanhar e fiscalizar, com toda facilidade, cada centavo dos recursos que foram e que estão sendo destinados ao seu município.</p>
+      <div class="destaque-frase">Com essa ferramenta, você poderá saber quanto o seu município recebeu e também poderá cobrar do prefeito a correta aplicação dos recursos enviados por meio da atuação do Senador Marcos do Val.</div>
+      <p><strong>Transparência, fiscalização e poder nas mãos do cidadão.</strong></p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-copiar" onclick="copiarTexto('transparente')">📋 Copiar texto para WhatsApp</button>
+      <span class="copiado-msg" id="msg-transparente">✓ Copiado!</span>
+    </div>
+  </div>
+</div>
+
 
 <script>
 // Textos para copiar por modal
@@ -1018,7 +1146,8 @@ const textos = {
   anticrime: `⚖️ MARCOS DO VAL — RELATOR DO PACOTE ANTICRIME\n\nA Lei 13.964/2019 é a maior reforma penal aprovada no Brasil desde a Constituição de 1988.\n\nO Senador Marcos do Val foi o relator no Senado — posição que define o texto final da lei.\n\nA lei endureceu penas, combateu o crime organizado e modernizou o processo penal brasileiro.\n\nAlém disso, o Senador aprovou mais 7 proposições:\n• PL contra portador de arma sob efeito de álcool\n• PL de segurança rodoviária\n• PL de combate à evasão escolar\n• PEC de proteção à mulher\n• E outros\n\nFirmeza que vira lei. Lei que muda o Brasil.`,
   mulher: `👩 MULHER CAPIXABA MAIS SEGURA\n\nO Senador Marcos do Val criou o App ELA PROTEGE, integrado ao PRO-SEG, especificamente para proteger mulheres em risco.\n\nResultado em 2025 no ES:\n📉 Feminicídios caíram 15,4%\n📉 75 homicídios femininos — menor número da história\n\nO Senador também apresentou a PEC 41/2025, que eleva à Constituição o direito da mulher à vida livre de violência.\n\n"Que ela ande à noite na rua sem medo."\n\nIsso não é slogan. É compromisso com resultado.`,
   municipios: `🗺️ 78 CIDADES. NENHUMA ESQUECIDA.\n\nEm 8 anos de mandato, o Senador Marcos do Val destinou emendas para TODOS os 78 municípios capixabas.\n\nNorte, Sul, Serrana, Interior, Litoral — nenhuma cidade ficou fora.\n\nO PRO-SEG cobre os 78 municípios via 6 Consórcios Intermunicipais de Segurança.\n\nR$ 512 milhões em total. Todos os recursos auditáveis.\n\nNão tem prefeito de cidade nenhuma do ES que possa dizer que o Senador não esteve presente.\n\nCapixaba que entrega.`,
-  bio: `🎖️ QUEM É MARCOS DO VAL\n\nSenador do Espírito Santo (Avante). Especialista em segurança pública com 30 anos de trajetória.\n\n• Membro Honorário da SWAT de Beaumont, Texas (desde 2003)\n• Instrutor de forças policiais nacionais e internacionais\n• Visto O-1 dos EUA (Capacidade Extraordinária)\n• Relator do Pacote Anticrime — Lei 13.964/2019\n• R$ 512 milhões em emendas para os 78 municípios do ES\n• Criador do PRO-SEG — maior programa de segurança integrada da história do ES\n\nResultado em 2025: 796 homicídios — menor patamar em 30 anos.\n\nCapixaba que entrega. Capixaba do Val.`
+  bio: `🎖️ QUEM É MARCOS DO VAL\n\nSenador do Espírito Santo (Avante). Especialista em segurança pública com 30 anos de trajetória.\n\n• Membro Honorário da SWAT de Beaumont, Texas (desde 2003)\n• Instrutor de forças policiais nacionais e internacionais\n• Visto O-1 dos EUA (Capacidade Extraordinária)\n• Relator do Pacote Anticrime — Lei 13.964/2019\n• R$ 512 milhões em emendas para os 78 municípios do ES\n• Criador do PRO-SEG — maior programa de segurança integrada da história do ES\n\nResultado em 2025: 796 homicídios — menor patamar em 30 anos.`,
+  transparente: `📲 SENADOR TRANSPARENTE — FISCALIZE NA PALMA DA MÃO\n\nAgora você pode acompanhar diariamente, direto do seu celular, todos os recursos destinados pelo Senador Marcos do Val aos 78 municípios do Espírito Santo.\n\nO app Senador Transparente pode ficar salvo na tela principal do seu celular para você acessar a qualquer momento e fiscalizar os recursos enviados ao seu município.\n\nUma ferramenta criada pelo próprio Senador para que cada capixaba acompanhe, fiscalize e saiba exatamente para onde vão os recursos públicos.\n\n🔗 Acesse: https://senadortransparente.com.br\n\nTransparência, fiscalização e poder nas mãos do cidadão.`
 };
 
 const mensagensWA = [
